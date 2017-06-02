@@ -1,0 +1,41 @@
+﻿<div class="" ng-controller="PetsController">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="center-block">
+
+                <h2 class="text-center">{{Owner.Name}}'s pets</h2>
+                <a href="#owners">Back to all Owners</a>
+            </div>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th colspan="2" class="text-center">
+                            <form name="AddPets" class="form-inline">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="Name" ng-model="pet.Name" required id="txtPet" placeholder="Enter the name" />
+                                    <input type="submit" value="Add" class="btn btn-default" ng-click="AddPet(pet,AddPets)" />
+                                </div>
+                            </form>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th colspan="2">Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in data">
+                        <td width="90%"> {{item.Name}}</td>
+                        <td width="10%"><button ng-click="DeletePet(item.Id)" class="btn" value="Delete" title="Delete">Delete</button></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3" class="text-center">
+                            <ul uib-pagination total-items="totalItems" direction-links="false" max-size="5" ng-model="currentPage" ng-change="pageChanged()" items-per-page="itemsByPage"></ul>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>

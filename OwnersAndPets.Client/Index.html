@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html ng-app="AngularApp">
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+
+    <link href="Content/Site.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/AppSettings.js"></script>
+    <script src="Scripts/Libs/jquery-3.1.1.min.js"></script>
+    <script src="Scripts/Libs/bootstrap.min.js"></script>
+    <script src="Scripts/Libs/angular.min.js"></script>
+    <!--<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.0.js"></script>-->
+    <script src="Scripts/Libs/angular-ui/ui-bootstrap.min.js"></script>
+    <script src="Scripts/Libs/angular-ui/ui-bootstrap-tpls.min.js"></script>
+    <script src="Scripts/Libs/angular-route.min.js"></script>
+    <script src="Scripts/Libs/angular-mocks.js"></script>
+    <script src="Scripts/Controllers/PetsController.js"></script>
+    <script src="Scripts/Controllers/OwnersController.js"></script>
+    <script src="Scripts/AngularApp.js"></script>
+
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-3"></div>
+
+        <div class="col-md-6">
+            <div ng-view></div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+
+    <div class="errorBlock well" id="ErrorBlock">
+
+    </div>
+
+</body>
+</html>

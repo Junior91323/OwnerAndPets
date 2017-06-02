@@ -1,0 +1,38 @@
+﻿<div class="" ng-controller="OwnersController">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th colspan="3" class="text-center">
+                            <form name="AddOwners" class="form-inline">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="Name" ng-model="owner.Name" required id="txtOwner" placeholder="Enter the name" />
+                                    <input type="submit" value="Add" class="btn btn-default" ng-click="AddOwner(owner,AddOwners)" />
+                                </div>
+                            </form>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Name</th>
+                        <th colspan="2">Pets count</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in data">
+                        <td width="50%"><a href="#pets/{{item.Id}}"> {{item.Name}}</a></td>
+                        <td width="40%">{{item.PetsCount}}</td>
+                        <td width="10%"><button ng-click="DeleteOwner(item.Id)" class="btn" value="Delete" title="Delete">Delete</button></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3" class="text-center">
+                            <ul uib-pagination total-items="totalItems" direction-links="false" max-size="5" ng-model="currentPage" ng-change="pageChanged()"items-per-page="itemsByPage"></ul>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
